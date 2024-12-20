@@ -1,0 +1,93 @@
+<header>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <h1>Nossa História</h1>
+
+      <span style="flex: 1 1 auto;"></span>
+
+      <button mat-icon-button (click)="openDialog()">
+        <mat-icon svgIcon="favorite"></mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
+
+<main>
+  <!-- <h3>A cada segundo que passa,
+    <span>
+      <b>
+        eu te amo mais!
+      </b>
+    </span>
+  </h3> -->
+
+  <h3>
+    Cada foto, é uma eternidade de momentos ao seu lado
+  </h3>
+
+  <div class="carousel-container">
+    <div class="carousel" [style.transform]="transformStyle">
+      <div class="carousel-item" *ngFor="let img of images; let i = index">
+        <img [src]="img" [alt]="'Imagem ' + (i + 1)" />
+      </div>
+    </div>
+
+    <!-- Botões de navegação -->
+    <button mat-icon-button class="prev" (click)="prevSlide()">
+      <mat-icon svgIcon="arrow_back"></mat-icon>
+    </button>
+    <button mat-icon-button class="next" (click)="nextSlide()">
+      <mat-icon svgIcon="arrow_forward"></mat-icon>
+    </button>
+  </div>
+
+  <h3>
+    Desde a nossa primeira até a última, em todos os momentos você me fez muito feliz!
+  </h3>
+
+  <mat-divider style="margin: 2rem 2rem;"></mat-divider>
+
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+
+    <h3>Estamos juntinhos há todo esse tempo, e assim será até o nosso último suspiro</h3>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().years }} ano</mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().months }} meses</mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().days }} dias</mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().hours }} horas</mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().minutes }} minutos</mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-content>{{ formatDuration().seconds }} segundos</mat-card-content>
+    </mat-card>
+
+
+  </div>
+
+  <mat-divider style="margin: 2rem 2rem;"></mat-divider>
+
+  <h2>Eu amo tudo em você manu, a sua beleza (cada detalhe me encanta), seu estilo maravilhoso, sua determinação em
+    tudo o que faz, sua lealdade, sempre ao meu lado, a confiança que você me passa, o sentimento sincero que demonstra,
+    o apoio que me dá quando preciso, seu conforto, que me acalma nos momentos difíceis, sua honestidade em todas as
+    situações, sua sinceridade, que traz transparência para nós, seu amor que ilumina meus dias, seu carinho, que me faz
+    sentir amado e especial</h2>
+
+
+  <h2>Eu agradeço do fundo do meu coração por você ter aceitado fazer parte da minha vida, obrigado!</h2>
+
+  <span style="opacity: 0.25;">obs: desculpa eu ser tão chato.</span>
+</main>
